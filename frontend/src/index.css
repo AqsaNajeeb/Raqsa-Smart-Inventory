@@ -1,0 +1,214 @@
+/* ===== Global Theme Variables ===== */
+:root {
+  /* Backgrounds */
+  --bg-gradient: linear-gradient(135deg, #0F172A 0%, #1E293B 50%, #142c4d 100%);
+  
+  --surface: #1E293B;
+
+  /* Text */
+  --text-primary: #faf6f6;
+  --text-secondary: #94A3B8;
+  --text-muted: #64748B;
+
+  /* Brand */
+  --primary: #1a2e4f;
+  --primary-hover: #152b5a;
+  --secondary: #0b386e;
+
+  /* Borders & overlays */
+  --border: rgba(255, 255, 255, 0.08);
+  --overlay-dark: rgba(0, 0, 0, 0.7);
+}
+
+/* ===== Root Container ===== */
+#root {
+  width: 100%; /* full width */
+  max-width: none; /* remove max-width */
+  margin: 0; /* remove auto centering */
+  padding: 1rem 2rem; /* optional padding inside edges */
+  text-align: left; /* optional: align content left */
+}
+
+
+/* ===== Logo ===== */
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+
+.logo:hover {
+  filter: drop-shadow(0 0 2em rgba(4, 38, 93, 0.7));
+}
+
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em rgba(28, 20, 113, 0.7));
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+/* ===== Cards ===== */
+.card {
+  padding: 2em;
+  background: var(--surface);
+  border-radius: 12px;
+  border: 1px solid var(--border);
+}
+
+/* ===== Text ===== */
+.read-the-docs {
+  color: var(--text-muted);
+}
+
+/* ===== Buttons ===== */
+.btn-primary {
+  background-color: var(--primary);
+  color: white;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-hover);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--primary);
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-weight: 600;
+  border: 1px solid var(--primary);
+  transition: 0.2s;
+}
+
+.btn-secondary:hover {
+  background-color: rgba(59, 130, 246, 0.1);
+}
+
+/* ===== Image Preview Modal ===== */
+.image-modal {
+  position: fixed;
+  inset: 0;
+  background: var(--overlay-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.image-modal-content {
+  position: relative;
+  background: var(--surface);
+  padding: 16px;
+  border-radius: 12px;
+  max-width: 90vw;
+  max-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-primary);
+}
+
+.image-modal img {
+  max-width: 80vw;
+  max-height: 80vh;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+/* Close button */
+.image-modal-close {
+  position: absolute;
+  top: -12px;
+  right: -12px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #020617;
+  color: white;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image-modal-close:hover {
+  background: #000;
+}
+
+/* For SVG icons inside navbar */
+.navbar-icon svg {
+  fill: var(--primary);      /* set main color */
+  transition: fill 0.3s ease;
+}
+
+.navbar-icon svg:hover {
+  fill: var(--secondary);    /* hover color */
+}
+
+/* Optional: if using <i> or FontAwesome icons */
+.navbar {
+  background: var(--bg-gradient);
+  color: var(--text-primary);
+  border-bottom: 1px solid var(--border);
+}
+
+.navbar a,
+.navbar-icon svg {
+  color: var(--text-primary);
+  fill: var(--text-primary);
+  stroke: var(--text-primary);
+}
+
+.navbar a:hover,
+.navbar-icon svg:hover {
+  color: var(--secondary);
+  fill: var(--secondary);
+  stroke: var(--secondary);
+}
+
+.subcategory-circle {
+  width: 105px;
+  height: 120px;
+  border-radius: 50%;
+  border: 2px solid #3B82F6;
+  color: #3B82F6;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 12px;
+  line-height: 1.2;
+  text-align: center;
+
+  padding: 10px;
+  box-sizing: border-box;
+
+  overflow: hidden;
+  word-break: break-word;
+  white-space: normal;
+}
+
+.input {
+  @apply w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-300;
+}
